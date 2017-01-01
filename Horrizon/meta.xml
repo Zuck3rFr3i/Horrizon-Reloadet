@@ -1,0 +1,10 @@
+<meta>
+	<!-- Librarys -->
+	<script src="settings_s.lua" type="server" />
+	<script src="lib/mysql_lib.lua" type="server" />
+	<script src="lib/shared_lib.lua" type="shared" cache="false" />
+	
+	<!-- Scripts -->
+	<script src="core/server_setup.lua" type="server" />
+	<script src="core/server_elementdatablock.lua" type="server" />
+</meta>
