@@ -17,12 +17,10 @@ function msql_gettbl(handler, ...)
 end
 
 function msql_settbl(handler, ...)
-	local statustrue = "Datas Writing in Database"
-	local statusfalse = "Datas could not be Written"
 	local WriteDat = dbExec(mysqlCon, handler, ...)
 	if WriteDat then
-		return statustrue
+		return true
 	else
-		return statusfalse
+		return false
 	end
 end
