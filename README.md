@@ -18,12 +18,17 @@ ihr es nutzen wollen um zu lernen hier einige Wichtige Resourcen
 die ihr braucht um LUA zu lernen:
 
 Alles über MTA [MTA Wiki](https://wiki.multitheftauto.com/wiki/Main_Page).
+
 Alles über Mysql [Mysql Wiki](http://dev.mysql.com/doc/refman/5.7/en/sql-syntax-data-manipulation.html).
+
 Alles über Objecte [Object ID,s](http://dev.prineside.com/en/gtasa_samp_model_id/).
 
 ###Interessante Linka MTA
+
 Die Meta.xml [MTA Meta](https://wiki.multitheftauto.com/wiki/Meta.xml).
+
 MTA Elemente [Elemente](https://wiki.multitheftauto.com/wiki/Element).
+
 Erklärung zu MTA Elementen [Element Tree](https://wiki.multitheftauto.com/wiki/Element_tree).
 
 ```lua
