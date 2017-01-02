@@ -3,6 +3,6 @@
 ]]
 sx,sy = guiGetScreenSize()
 
-player = localPlayer
+player = getLocalPlayer()
 pserial = getPlayerSerial(player)
 pname = getPlayerName(player)
