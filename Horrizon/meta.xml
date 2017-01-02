@@ -9,11 +9,12 @@
 	<script src="core/server_setup.lua" type="server" />
 	<script src="core/server_elementdatablock.lua" type="server" />
 	
+	<!-- Scripts_Modules -->
+	<script src="modules/login/login_client.lua" type="client" cache="false" />
+	
 	<!-- Scripts_System -->
 	<script src="system/onPlayerConnect.lua" type="server" />
 	<script src="system/onPlayerJoin_s.lua" type="server" />
-	
-	<!-- Scripts_Modules -->
 	
 	
 	<!-- Scripts_DO NOT MOVE ANYTHINg ABOVE! -->
