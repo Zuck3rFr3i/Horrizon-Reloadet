@@ -27,6 +27,28 @@ aeh("System_Player:login", player, function(userdata, rows)
 		guiSetEnabled(guielem_btnlogin, false)
 		guiSetText(guielem_btnlogin, "Einloggen - Du besitzt keinen Account!")
 	end
+	aeh("onClientGUIClick", guielem_btnlogin, function()
+		local str_pass = guiGetText(guielem_editpass)
+		local str_user = guiGetText(guielem_edituser)
+		if str_pass then
+			if string.len(str_pass) >= 6 then
+				for i, v in pairs(userdata) do
+					local str_reguser = v.user
+					if str_reguser == str_user then
+						local str_hashpass = hash("sha512", str_pass)
+						if str_hashpass then
+							triggerServerEvent("System_Player:checklogin", player, str_hashpass, str_user)
+						end
+					else
+						showMessage("Der angegebene Username gehört nicht zu ihnen!", 5000, "typeinfo")
+					end
+				end
+			else
+				showMessage("Das angegebene Passwort ist zu kurz!", 5000, "typeinfo")
+			end
+		end
+	end, false)
+	guiEditSetMasked(guielem_editpass, true)
 	showCursor(true)
 	guiWindowSetMovable(guielem_loginmainFrame, false)
 	guiWindowSetSizable(guielem_loginmainFrame, false)
