@@ -23,7 +23,7 @@ Alles über Mysql [Mysql Wiki](http://dev.mysql.com/doc/refman/5.7/en/sql-syntax
 
 Alles über Objecte [Object ID,s](http://dev.prineside.com/en/gtasa_samp_model_id/).
 
-###Interessante Linka MTA
+###Interessante Links MTA
 
 Die Meta.xml [MTA Meta](https://wiki.multitheftauto.com/wiki/Meta.xml).
 
