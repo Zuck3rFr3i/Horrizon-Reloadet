@@ -4,6 +4,7 @@
 	<script src="lib/mysql_lib.lua" type="server" />
 	<script src="lib/shared_lib.lua" type="shared" cache="false" />
 	<script src="lib/msg_lib.lua" type="client" cache="false" />
+	<script src="lib/camdrive_lib.lua" type="client" cache="false" />
 	
 	<!-- Scripts_Core -->
 	<script src="core/core_client.lua" type="client" cache="false"/>

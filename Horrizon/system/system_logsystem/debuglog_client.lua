@@ -22,7 +22,6 @@ aeh("onClientDebugMessage", root, function(str_message, int_level, str_file, int
 		int_line = "N/A"
 	end
 	if str_src_name then
-		outputDebugString(str_message..""..int_level..""..str_file..""..int_line..""..str_src_name)
 		triggerServerEvent("logsystem:insertlogs", localPlayer, str_message, int_level, str_file, int_line, str_src_name)
 		str_src_name, str_message, int_level, str_file, int_line = nil, nil, nil, nil, nil
 	end
