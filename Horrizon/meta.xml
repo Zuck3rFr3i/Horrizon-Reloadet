@@ -1,27 +1,13 @@
 <meta>
 	<!-- Librarys -->
-	<script src="settings_s.lua" type="server" />
-	<script src="lib/mysql_lib.lua" type="server" />
-	<script src="lib/shared_lib.lua" type="shared" cache="false" />
-	<script src="lib/msg_lib.lua" type="client" cache="false" />
-	<script src="lib/camdrive_lib.lua" type="client" cache="false" />
+		<script src="lib/mysql_func.lua" type="server" />
+		<script src="lib/randomstring_func.lua" type="shared" cache="false" />
+	<!-- Core -->
 	
-	<!-- Scripts_Core -->
-	<script src="core/core_client.lua" type="client" cache="false"/>
-	<script src="core/server_setup.lua" type="server" />
-	<script src="core/server_elementdatablock.lua" type="server" />
+	<!-- Modules -->
 	
-	<!-- Scripts_Modules -->
-	<script src="modules/login/login_client.lua" type="client" cache="false" />
-	<script src="modules/login/login_server.lua" type="server" />
+	<!-- Serverinit -->
+		<script src="server_init.lua" type="server" />
+	<!-- Resources -->
 	
-	<!-- Scripts_System -->
-	<script src="system/onPlayerConnect.lua" type="server" />
-	<script src="system/onPlayerJoin_s.lua" type="server" />
-	<script src="system/system_logsystem/debuglog_client.lua" type="client" cache="false" />
-	<script src="system/system_logsystem/debuglog_server.lua" type="server" />
-	
-	
-	<!-- Scripts_DO NOT MOVE ANYTHINg ABOVE! -->
-	<script src="system/onPlayerJoin_c.lua" type="client" cache="false" />
 </meta>

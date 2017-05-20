@@ -12,6 +12,17 @@ ich habe Horrizon nie komplett aufgegeben!
 Horrizon wurde trotzdem weiterentwickelt.
 
 ------------------------------------------------------------
+###Dev-blog
+
+```
+Update: Version 0.0.01
+*Restructured the complete filesystem.
+*Addet Server / Client settings file. (Ingame editing will be Possible)
+*Addet Selfcontructing Mysql querys. (NO SQL files needet.)
+
+```
+
+------------------------------------------------------------
 
 Solltet ihr das Script selbst weiterentwickeln wollen oder solltet
 ihr es nutzen wollen um zu lernen hier einige Wichtige Resourcen

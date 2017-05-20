@@ -1,0 +1,10 @@
+<server_settings>
+	<host>localhost</host>
+	<db>horrizondb</db>
+	<user>root</user>
+	<pass></pass>
+	<maxplayers>120</maxplayers>
+	<maxfps>60</maxfps>
+	<serverpass></serverpass>
+	<initserverinlockdown>1</initserverinlockdown> <!-- If set to 1 the server will lock itself while setting up. -->
+</server_settings>
