@@ -4,12 +4,19 @@ local maxfps
 local serverpass
 local lockserverwhileinit
 
+local function finishServerSetup()
+	setServerPassword(serverpass)
+	outputServerLog("[Horrizon]: Serversetup finished, Ready to Accept Player Connections!")
+end
+
 local function server_mysqlgenerate()
 	outputServerLog("[Horrizon]: Setting up Mysql Structure!")
 	mysql_write("CREATE TABLE IF NOT EXISTS `accountdata` (`uid` INT NOT NULL AUTO_INCREMENT,`serial` VARCHAR(255) NOT NULL DEFAULT '0',`characktername` VARCHAR(255) NOT NULL DEFAULT '0',`email` VARCHAR(255) NOT NULL DEFAULT '0',`gender` VARCHAR(255) NOT NULL DEFAULT '0',PRIMARY KEY (`uid`))COLLATE='latin1_swedish_ci'")
 	mysql_write("CREATE TABLE IF NOT EXISTS `userdata` (`uid` INT NOT NULL DEFAULT '0',`serial` VARCHAR(255) NOT NULL DEFAULT '0',`spawn` VARCHAR(255) NOT NULL DEFAULT '|0|0|0|0',`licences` VARCHAR(255) NOT NULL DEFAULT '|0|0|0|0|0|0',`inventory` VARCHAR(255) NOT NULL DEFAULT '|0|0',PRIMARY KEY (`uid`))COLLATE='latin1_swedish_ci'")
+	mysql_write("CREATE TABLE IF NOT EXISTS `atmdata` (`id` INT NOT NULL DEFAULT '0',`position` VARCHAR(255) NOT NULL DEFAULT '|0|0|0|0',PRIMARY KEY (`id`))COLLATE='latin1_swedish_ci'")
 	-- More mysql Structure.
 	outputServerLog("[Horrizon]: Mysqlstructure loadet!")
+	finishServerSetup()
 end
 
 local function setup_lockedstate()
@@ -33,6 +40,12 @@ local function server_setsettings()
 		setup_lockedstate()
 	else
 		setup_openstate()
+	end
+	local hours, minutes, _, day, month, year = getRealTimeOnMyServer()
+	if not fileExists("logs/systemlogs/systemlog_"..day.."."..month.."."..year..".xml") then
+		systemlogfile = fileCreate("logs/systemlogs/systemlog_"..day.."."..month.."."..year..".xml")
+	else
+		systemlogfile = fileOpen("logs/systemlogs/systemlog_"..day.."."..month.."."..year..".xml")
 	end
 end
 
@@ -60,4 +73,20 @@ if settings_file then
 	end
 else
 	outputServerLog("[Horrizon]: Could not load Serverside Settingsfile in server_init.lua Line: 1 and 8!")
+end
+
+function writesystemlog(message, sourceElement)
+	if systemlogfile then
+		if message ~= "" then
+			if getElementType(sourceElement) == "player" then
+				local Playername = getPlayerName(sourceElement)
+				local hours, minutes, _, day, month, year = getRealTimeOnMyServer()
+				local str_string = "<msg time=\""..day.."."..month.."."..year.." - "..hours..":"..minutes.."\" name=\""..Playername.."\" message=\""..message.."\"/>\n"
+				local size = fileGetSize(systemlogfile)
+				fileSetPos(systemlogfile, size)
+				fileWrite(systemlogfile, str_string)
+				fileFlush(systemlogfile)
+			end
+		end
+	end
 end

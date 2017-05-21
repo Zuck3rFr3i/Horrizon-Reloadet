@@ -2,12 +2,27 @@
 	<!-- Librarys -->
 		<script src="lib/mysql_func.lua" type="server" />
 		<script src="lib/randomstring_func.lua" type="shared" cache="false" />
+		<script src="lib/generate_servertime.lua" type="shared" cache="false" />
+		
 	<!-- Core -->
+		<script src="global_client.lua" type="client" cache="false" />
 	
 	<!-- Modules -->
-	
+		<script src="modules/logsystem/log_client.lua" type="client" cache="false" />
+		<script src="modules/logsystem/log_server.lua" type="server" />
+		<script src="modules/registration/registration_client.lua" type="client" cache="false" />
+		<script src="modules/backgroundcam/background_cam.lua" type="client" cache="false" />
+		
+		<script src="modules/init_player/playerinit_server.lua" type="server" />
+		
 	<!-- Serverinit -->
 		<script src="server_init.lua" type="server" />
+		
 	<!-- Resources -->
+	
+	<!-- Do not Move!! -->
+		<script src="client_readyinfo.lua" type="client" cache="false" />
+	
+	<!-- Your Scripts Below! -->
 	
 </meta>

@@ -15,11 +15,18 @@ Horrizon wurde trotzdem weiterentwickelt.
 ###Dev-blog
 
 ```
+Update: Version 0.0.15
+*Addet Debuglog, Systemlog and Chatlog System.
+*Addet Chat prefixes based on Admin status.
+*Startet working on the Player init.
+*Addet Background settings for Reg / login.
+```
+
+```
 Update: Version 0.0.01
 *Restructured the complete filesystem.
 *Addet Server / Client settings file. (Ingame editing will be Possible)
 *Addet Selfcontructing Mysql querys. (NO SQL files needet.)
-
 ```
 
 ------------------------------------------------------------
