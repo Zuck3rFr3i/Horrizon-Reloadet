@@ -3,26 +3,36 @@
 		<script src="lib/mysql_func.lua" type="server" />
 		<script src="lib/randomstring_func.lua" type="shared" cache="false" />
 		<script src="lib/generate_servertime.lua" type="shared" cache="false" />
-		
+		<script src="lib/elementData.lua" type="shared" cache="false" />
+
 	<!-- Core -->
 		<script src="global_client.lua" type="client" cache="false" />
-	
+
+	<!-- Resources -->
+
+
 	<!-- Modules -->
 		<script src="modules/logsystem/log_client.lua" type="client" cache="false" />
 		<script src="modules/logsystem/log_server.lua" type="server" />
-		<script src="modules/registration/registration_client.lua" type="client" cache="false" />
+
+		<!-- Registration -->
+			<file src="modules/registration/html/registration_style.css" />
+			<file src="modules/registration/html/registration_gui.html" />
+
+			<script src="modules/registration/registration_client.lua" type="client" cache="false" />
+			<script src="modules/registration/registration_server.lua" type="server" />
+		<!-- Registration end -->
+
 		<script src="modules/backgroundcam/background_cam.lua" type="client" cache="false" />
-		
+
 		<script src="modules/init_player/playerinit_server.lua" type="server" />
-		
+
 	<!-- Serverinit -->
 		<script src="server_init.lua" type="server" />
-		
-	<!-- Resources -->
-	
+
 	<!-- Do not Move!! -->
 		<script src="client_readyinfo.lua" type="client" cache="false" />
-	
+
 	<!-- Your Scripts Below! -->
-	
+
 </meta>

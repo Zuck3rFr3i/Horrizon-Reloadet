@@ -11,7 +11,7 @@ end
 
 local function server_mysqlgenerate()
 	outputServerLog("[Horrizon]: Setting up Mysql Structure!")
-	mysql_write("CREATE TABLE IF NOT EXISTS `accountdata` (`uid` INT NOT NULL AUTO_INCREMENT,`serial` VARCHAR(255) NOT NULL DEFAULT '0',`characktername` VARCHAR(255) NOT NULL DEFAULT '0',`email` VARCHAR(255) NOT NULL DEFAULT '0',`gender` VARCHAR(255) NOT NULL DEFAULT '0',PRIMARY KEY (`uid`))COLLATE='latin1_swedish_ci'")
+	mysql_write("CREATE TABLE IF NOT EXISTS `accountdata` (`uid` INT NOT NULL AUTO_INCREMENT,`serial` VARCHAR(255) NOT NULL DEFAULT '0',`username` VARCHAR(255) NOT NULL DEFAULT '0',`password` VARCHAR(255) NOT NULL DEFAULT '0',`email` VARCHAR(255) NOT NULL DEFAULT '0',`gender` VARCHAR(255) NOT NULL DEFAULT '0',`securitykey` VARCHAR(255) NOT NULL DEFAULT '0',PRIMARY KEY (`uid`))COLLATE='latin1_swedish_ci'")
 	mysql_write("CREATE TABLE IF NOT EXISTS `userdata` (`uid` INT NOT NULL DEFAULT '0',`serial` VARCHAR(255) NOT NULL DEFAULT '0',`spawn` VARCHAR(255) NOT NULL DEFAULT '|0|0|0|0',`licences` VARCHAR(255) NOT NULL DEFAULT '|0|0|0|0|0|0',`inventory` VARCHAR(255) NOT NULL DEFAULT '|0|0',PRIMARY KEY (`uid`))COLLATE='latin1_swedish_ci'")
 	mysql_write("CREATE TABLE IF NOT EXISTS `atmdata` (`id` INT NOT NULL DEFAULT '0',`position` VARCHAR(255) NOT NULL DEFAULT '|0|0|0|0',PRIMARY KEY (`id`))COLLATE='latin1_swedish_ci'")
 	-- More mysql Structure.
@@ -90,3 +90,8 @@ function writesystemlog(message, sourceElement)
 		end
 	end
 end
+
+addEvent("server:kickplayer", true)
+addEventHandler("server:kickplayer", root, function(msg)
+	kickPlayer(client, client, msg)
+end)

@@ -1,0 +1,1 @@
+<msg time="26.05.2017 - 11:48" name="Unknown" message="attempt to index global '_' (a nil value)" file="modules\registration\registration_server.lua" line="12"/>

@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<link rel="stylesheet" style="text/css" href="registration_style.css">
+		 <meta charset="UTF-8"> 
+	</head>
+	<body onload="loadForm()">
+		<div id="loader"></div>
+		<div id="contentbackground" class="animate-bottom">
+			<div id="upperbar">
+				<a class="upptertext">Horrizon Reallife Registration</a>
+			</div>
+			<label>Username</label>
+			<input id="username"/>
+			<label>Password</label>
+			<input id="password"/>
+			<label>Email</label>
+			<input id="email"/>
+			<label>Security Code</label>
+			<input id="securitycode"/>
+			<button id="regbutton" type="button">Registrieren</button>
+			<p class="lowertext">
+			Horrizon Reallife wurde von Zuck3rFr3i entwickelt! Zuck3rFr3i hat jedoch keine auswirkung auf die art und weise wie der Server geführt wird!
+			Er ist nicht für das Team und dessen regelungen verantwortlich! Bitte beachtet das Zuck3rFr3i keinen eigenen Server mit Horrizon aufmacht sondern
+			das Script jediglich Veröffentlicht!
+			</p>
+			  <div class="loader"></div> 
+		</div>
+			<script>
+				document.getElementById('regbutton').onclick = function() {
+					var username = document.getElementById('username').value;
+					var password = document.getElementById('password').value;
+					var email = document.getElementById('email').value;
+					var securitycode = document.getElementById('securitycode').value;
+					mta.triggerEvent("testoutput", username, password, email, securitycode)
+				}
+			</script>
+			<script>
+				var myVar;
+				function loadForm() {
+					myVar = setTimeout(showPage, 3000);
+				}
+				function showPage() {
+				  document.getElementById("loader").style.display = "none";
+				  document.getElementById("contentbackground").style.display = "block";
+				}
+			</script>
+	</body>
+	<footer>
+	
+	</footer>
+</html>

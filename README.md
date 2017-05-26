@@ -15,6 +15,12 @@ Horrizon wurde trotzdem weiterentwickelt.
 ###Dev-blog
 
 ```
+Update: Version 0.0.20
+*Addet Registration Gui on HTML base.
+*Addet ElementData System.
+```
+
+```
 Update: Version 0.0.15
 *Addet Debuglog, Systemlog and Chatlog System.
 *Addet Chat prefixes based on Admin status.
