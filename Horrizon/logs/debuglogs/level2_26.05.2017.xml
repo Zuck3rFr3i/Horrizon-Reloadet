@@ -1,4 +1,0 @@
-<msg time="26.05.2017 - 11:50" name="Unknown" message="dbExec failed; (1136) Column count doesn't match value count at row 1" file="Horrizon\lib\mysql_func.lua" line="54"/>
-<msg time="26.05.2017 - 11:50" name="Unknown" message="dbExec failed; (1136) Column count doesn't match value count at row 1" file="Horrizon\lib\mysql_func.lua" line="54"/>
-<msg time="26.05.2017 - 11:52" name="Unknown" message="dbExec failed; (1136) Column count doesn't match value count at row 1" file="Horrizon\lib\mysql_func.lua" line="54"/>
-<msg time="26.05.2017 - 11:53" name="Unknown" message="dbExec failed; (1048) Column 'securitykey' cannot be null" file="Horrizon\lib\mysql_func.lua" line="54"/>

@@ -1,8 +1,8 @@
 local width, height = 600, 400
 local x, y = (sx/2) - (width/2), (sy/2) - (height/2)
 
-addEvent("testoutput", true)
-addEventHandler("testoutput", root, function(username, password, email, securitycode)
+addEvent("system:senregdata", true)
+addEventHandler("system:senregdata", root, function(username, password, email, securitycode)
 	if string.len(username) >= 4 then
 		if string.len(password) >= 6 then
 			if string.len(email) >= 6 then
@@ -23,10 +23,18 @@ addEventHandler("testoutput", root, function(username, password, email, security
 	end
 end)
 
+addEvent("system:closeregistration", true)
+addEventHandler("system:closeregistration", localPlayer, function()
+	showCursor(false)
+	destroyElement(browser)
+	killTimer(backgroundtimer)
+	backgroundtimer = nil
+end)
+
 addEvent("system:newPlayer", true)
 addEventHandler("system:newPlayer", localPlayer, function()
 	showCursor(true)
-	local browser = guiCreateBrowser ( 0, 0, sx, sy, true, true, false)
+	browser = guiCreateBrowser ( 0, 0, sx, sy, true, true, false)
 	local theBrowser = guiGetBrowser( browser )
 	addEventHandler( "onClientBrowserCreated", theBrowser, function( )
 		loadBrowserURL( source, "http://mta/Horrizon/modules/registration/html/registration_gui.html" )

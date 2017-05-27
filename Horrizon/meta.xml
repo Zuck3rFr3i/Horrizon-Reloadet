@@ -7,6 +7,7 @@
 
 	<!-- Core -->
 		<script src="global_client.lua" type="client" cache="false" />
+		<script src="playerdata_handler.lua" type="server" />
 
 	<!-- Resources -->
 
@@ -16,12 +17,21 @@
 		<script src="modules/logsystem/log_server.lua" type="server" />
 
 		<!-- Registration -->
-			<file src="modules/registration/html/registration_style.css" />
-			<file src="modules/registration/html/registration_gui.html" />
+			<file src="modules/registration/html/fonts/Sketch.ttf" cache="false" />
+			<file src="modules/registration/html/registration_style.css" cache="false" />
+			<file src="modules/registration/html/registration_gui.html" cache="false" />
 
 			<script src="modules/registration/registration_client.lua" type="client" cache="false" />
 			<script src="modules/registration/registration_server.lua" type="server" />
 		<!-- Registration end -->
+		<!-- Login -->
+			<file src="modules/login/html/fonts/Sketch.ttf" cache="false" />
+			<file src="modules/login/html/login_style.css" cache="false" />
+			<file src="modules/login/html/login_gui.html" cache="false" />
+
+			<script src="modules/login/login_client.lua" type="client" cache="false" />
+			<script src="modules/login/login_server.lua" type="server" />
+		<!-- Login end -->
 
 		<script src="modules/backgroundcam/background_cam.lua" type="client" cache="false" />
 

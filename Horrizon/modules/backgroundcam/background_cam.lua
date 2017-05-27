@@ -13,6 +13,6 @@ end
 
 addEvent("server:setbackground", true)
 addEventHandler("server:setbackground", localPlayer, function()
-	setTimer(setBackcam, 2000, 0)
+	backgroundtimer = setTimer(setBackcam, 2000, 0)
 	fadeCamera(true)
 end)

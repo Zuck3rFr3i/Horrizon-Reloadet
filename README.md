@@ -15,6 +15,18 @@ Horrizon wurde trotzdem weiterentwickelt.
 ###Dev-blog
 
 ```
+Update: Version 0.0.25
+*Addet Login Gui on HTML base.
+*Addet PlayerSavedata system.
+*Fixed some common Errors.
+*Removed reportSecuritySystem function.
+*Updated Registration GUI based on Community Feedback.
+*Worked on Playerinit, spawn.
+*Updated Chattag system and colors for every Rank.
+*Changed Logsystem, files get sorted by Level.
+```
+
+```
 Update: Version 0.0.20
 *Addet Registration Gui on HTML base.
 *Addet ElementData System.

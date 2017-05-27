@@ -1,0 +1,8 @@
+<saacl>
+	<chatlogs>1</chatlogs>
+	<debuglogs>1</debuglogs>
+	<timeban>1</timeban>
+	<permaban>1</permaban>
+	<viewaccountinfo>1</viewaccountinfo>
+	<editaccountinfo>1</editaccountinfo>
+</saacl>

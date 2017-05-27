@@ -2,10 +2,10 @@ addEvent("server:handeldebug", true)
 addEventHandler("server:handeldebug", root, function(str_message, int_level, str_file, int_line, str_src_name)
 	local hours, minutes, _, day, month, year = getRealTimeOnMyServer()
 	local loadlevelfile
-	if not fileExists("logs/debuglogs/level"..int_level.."_"..day.."."..month.."."..year..".xml") then
-		loadlevelfile = fileCreate("logs/debuglogs/level"..int_level.."_"..day.."."..month.."."..year..".xml")
+	if not fileExists("logs/debuglogs/level"..int_level.."/"..day.."."..month.."."..year..".xml") then
+		loadlevelfile = fileCreate("logs/debuglogs/level"..int_level.."/"..day.."."..month.."."..year..".xml")
 	else
-		loadlevelfile = fileOpen("logs/debuglogs/level"..int_level.."_"..day.."."..month.."."..year..".xml")
+		loadlevelfile = fileOpen("logs/debuglogs/level"..int_level.."/"..day.."."..month.."."..year..".xml")
 	end
 	if loadlevelfile then
 		local str_string = "<msg time=\""..day.."."..month.."."..year.." - "..hours..":"..minutes.."\" name=\""..str_src_name.."\" message=\""..str_message.."\" file=\""..str_file.."\" line=\""..int_line.."\"/>\n"
@@ -19,7 +19,7 @@ end)
 local function server_handlechatmsg(message, sourceElement)
 	local tag
 	local tagcolor
-	if getElementData(sourceElement, "loggedin") == 1 then
+	if getSaveElementData(sourceElement, "loggedin") == 1 then
 		if not message or message == "" then return end
 		local chatlogfile
 		local hours, minutes, seconds, day, month, year = getRealTimeOnMyServer()
@@ -31,20 +31,13 @@ local function server_handlechatmsg(message, sourceElement)
 		if chatlogfile then
 			local strName = getPlayerName(sourceElement)
 			local strSerial = getPlayerSerial(sourceElement)
-			local strmessage = "<msg time=\""..day.."."..month.."."..year.." - "..hours..":"..minutes..":"..seconds.."\" name=\""..strName.."\" serial=\""..strSerial.."\" Message=\""..message.."/>\n"
+			local strmessage = "<msg time=\""..day.."."..month.."."..year.." - "..hours..":"..minutes..":"..seconds.."\" name=\""..strName.."\" serial=\""..strSerial.."\" Message=\""..message.."\"/>\n"
 			local size = fileGetSize(chatlogfile)
 			fileSetPos(chatlogfile, size)
 			fileWrite(chatlogfile, strmessage)
 			fileFlush(chatlogfile)
 		end
-		if getElementData(sourceElement, "adminlv") == 0 then
-			tag = "[Spieler]"
-			tagcolor = "#0DFF00"
-		elseif getElementData(sourceElement, "adminlv") == 1 then
-			tag = "[VIP]"
-			tagcolor = "#F7FF00"
-		end
-		outputChatBox(tagcolor..""..tag.."#00FFF7"..getPlayerName(sourceElement)..": #F8FEF8"..message, root, 0, 0, 0, true)
+		outputChatBox(getSaveElementData(sourceElement, "tagcolor")..""..getSaveElementData(sourceElement, "tag").."#00FFF7"..getPlayerName(sourceElement)..": #F8FEF8"..message, root, 0, 0, 0, true)
 	else
 		outputChatBox("#FF4000[Horrizon]: #FFAF00Sie sind nicht eingeloggt! Loggen sie sich ein oder Registrieren sie sich um Nachrichten schreiben zu können.", sourceElement, 0, 0, 0, true)
 	end

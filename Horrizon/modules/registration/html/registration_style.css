@@ -1,7 +1,7 @@
 #contentbackground {
-	background-color: #A1A1A1;
+	background-color: #BCBCBC;
 	width: 500px;
-	height: 650px;
+	height: 630px;
 	position:absolute;
 	left: 35%; right: 35%;
 	top:10%; bottom:25%;
@@ -10,17 +10,23 @@
 	display: none;
 }
 
+@font-face {
+  font-family: 'SKETCH';
+  src: url('fonts/Sketch.ttf');
+}
+
 #btn {
 	width: 20px;
 	height: 40px;
-	background-color: red;
+	background-color: FB9D22;
 }
 
 #upperbar {
-	background-color: #EB8602;
+	background-color: #FB9D22;
 	width: 100%;
-	height: 40px;
+	height: 45px;
 	outline: #000000 solid 1px;
+	text-align: center;
 }
 
 label {
@@ -40,8 +46,9 @@ label span {
 input {
   display: block;
   width: 90%;
+  height: 25px;
   margin-left: 20px;
-  padding: 5px 20px;
+  padding: 5px 5px;
   font-size: 1em;
   border-radius: 3px;
   outline: none;
@@ -53,16 +60,30 @@ input {
   color: #000000;
 }
 
+.inputtext {
+	font-size: 15px;
+}
+
+.newfont {
+	font-family: SKETCH;
+}
+
+a {
+	text-align: center;
+	margin: auto;
+}
+
 .upptertext {
-	margin-left: 15%;
-	font-size: 30px;
+	font-size: 25px;
+	font-family: SKETCH;
 }
 
 .lowertext{
 	text-align: center;
 	font-size: 15px;
-	max-width: 90%;
+	max-width: 97%;
 	margin-left: 10px;
+	font-family: SKETCH;
 }
 
 button {
@@ -73,12 +94,13 @@ button {
   transform: translate(-50%, 0);
   font-family: inherit;
   color: white;
-  background: #EE8B00;
+  background: #FB9D22;
   outline: none;
   border: none;
   padding: 5px 15px;
   font-size: 1.3em;
   font-weight: 400;
+  font-family: SKETCH;
   border-radius: 3px;
   box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
   cursor: pointer;
@@ -103,7 +125,6 @@ button:hover {
     100% { transform: rotate(360deg); }
 }
 
-/* Center the loader */
 #loader {
   position: absolute;
   left: 50%;
@@ -131,7 +152,6 @@ button:hover {
   100% { transform: rotate(360deg); }
 }
 
-/* Add animation to "page content" */
 .animate-bottom {
   position: relative;
   -webkit-animation-name: animatebottom;
@@ -148,4 +168,8 @@ button:hover {
 @keyframes animatebottom { 
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
+}
+
+input:focus {
+	outline: #FFBD5F solid 1px;
 }

@@ -9,14 +9,14 @@
 			<div id="upperbar">
 				<a class="upptertext">Horrizon Reallife Registration</a>
 			</div>
-			<label>Username</label>
-			<input id="username"/>
-			<label>Password</label>
-			<input id="password"/>
-			<label>Email</label>
-			<input id="email"/>
-			<label>Security Code</label>
-			<input id="securitycode"/>
+			<label class="newfont">Username:</label>
+			<input id="username" class="inputtext"/>
+			<label class="newfont">Password:</label>
+			<input id="password" type="password" class="inputtext"/>
+			<label class="newfont">Email:</label>
+			<input id="email" class="inputtext"/>
+			<label class="newfont">Security Code:</label>
+			<input id="securitycode" class="inputtext"/>
 			<button id="regbutton" type="button">Registrieren</button>
 			<p class="lowertext">
 			Horrizon Reallife wurde von Zuck3rFr3i entwickelt! Zuck3rFr3i hat jedoch keine auswirkung auf die art und weise wie der Server geführt wird!
@@ -31,7 +31,7 @@
 					var password = document.getElementById('password').value;
 					var email = document.getElementById('email').value;
 					var securitycode = document.getElementById('securitycode').value;
-					mta.triggerEvent("testoutput", username, password, email, securitycode)
+					mta.triggerEvent("system:senregdata", username, password, email, securitycode)
 				}
 			</script>
 			<script>
@@ -45,7 +45,4 @@
 				}
 			</script>
 	</body>
-	<footer>
-	
-	</footer>
 </html>
